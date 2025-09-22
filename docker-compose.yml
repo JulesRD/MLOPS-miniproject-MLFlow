@@ -6,10 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile-FastAPI
     container_name: fastapi-ml-service
-    network_mode: host
     ports:
       - "8000:8000"
-    environment:
-      - MLFLOW_TRACKING_URI=http://host.docker.internal:8074
-      - MODEL_NAME=Iris-model
-      - MODEL_VERSION=1
+    env_file:
+      - .env

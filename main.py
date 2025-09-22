@@ -40,8 +40,7 @@ def load_initial_model():
     """
     logging.info(f"✅ Entered function load_initial_model")
     global model, current_model_uri
-    # Example: you can set default model URI here
-    default_uri = "models:/Iris-model/2"  # change to your MLflow registered model
+    default_uri = "models:/Iris-model/2"
     try:
         model = mlflow.pyfunc.load_model(default_uri)
         current_model_uri = default_uri
